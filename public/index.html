@@ -23,6 +23,12 @@
     <script src="http://localhost:3003/bundle.js"></script>
     <!-- <script src="http://localhost:3004/bundle.js"></script> -->
     <script>
+      let params = new URLSearchParams(window.location.search);
+      let id = params.get("id")
+      if (id === null) {
+        id = 1;
+      };
+
       // ReactDOM.render(
       //   React.createElement(App1, {id: 3}),
       //   document.getElementById('app1')
@@ -36,7 +42,7 @@
       //   document.getElementById('similar')
       // );
       ReactDOM.render(
-        React.createElement(App0, {id: 3}),
+        React.createElement(App0, { id }),
         document.getElementById('pictures')
       );
     </script>
